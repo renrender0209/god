@@ -1,0 +1,7 @@
+services:
+  - type: static
+    name: god-mod
+    env: static
+    branch: main
+    staticPublishPath: .
+    autoDeploy: true
