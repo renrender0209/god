@@ -1,7 +1,9 @@
 services:
-  - type: static
-    name: god-mod
+  - type: web
+    name: god-app
     env: static
-    branch: main
-    staticPublishPath: .
+    region: oregon
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
     autoDeploy: true
