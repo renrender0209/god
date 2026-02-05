@@ -1,9 +1,9 @@
-　services:
+services:
   - type: web
     name: godfield-game
     env: static
-    branch: main
-    buildCommand: echo "Static site deployment"
+    branch: gh-pages
+    buildCommand: echo "Deploying from gh-pages branch"
     staticPublishPath: ./
     headers:
       - path: /main.dart.js
@@ -12,16 +12,7 @@
       - path: /images/*
         name: Cache-Control
         value: public, max-age=31536000, immutable
-      - path: /*.png
-        name: Cache-Control
-        value: public, max-age=31536000
       - path: /index.html
         name: Cache-Control
         value: public, max-age=0, must-revalidate
-      - path: /*
-        name: X-Content-Type-Options
-        value: nosniff
-      - path: /*
-        name: X-Frame-Options
-        value: SAMEORIGIN
     autoDeploy: true
